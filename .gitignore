@@ -1,0 +1,9 @@
+# données d'instance (jamais dans le dépôt public)
+/data/*.js
+!/data/.gitkeep
+/instances/
+# divers
+.DS_Store
+node_modules/
+*.log
+/out/
