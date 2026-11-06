@@ -4,7 +4,7 @@ Portail de travail pour le bureau et le conseil d’administration d’une assoc
 
 Un seul fichier `index.html`, qui s’ouvre dans n’importe quel navigateur, sur ordinateur comme sur téléphone, sans serveur ni installation. Les données de démonstration sont fictives.
 
-**Statut : prototype fonctionnel (v5).** Tout ce qui est saisi reste dans le navigateur. Le raccordement à un serveur (données partagées, comptes, notifications) est la prochaine étape — voir *Feuille de route*.
+**Statut : prototype fonctionnel (v5.1).** Tout ce qui est saisi reste dans le navigateur. Le raccordement à un serveur (données partagées, comptes, notifications) est la prochaine étape — voir *Feuille de route*.
 
 ## Ce qu’on y trouve
 
@@ -46,7 +46,7 @@ Le dépôt public contient uniquement le logiciel et un jeu de données fictif. 
 python3 tools/injecter-donnees.py data/mon-association.js index.html
 ```
 
-4. Adaptez `INDICATIF` (indicatif téléphonique des liens WhatsApp et Signal) et `KEY` (clé de stockage du navigateur) en tête du script, et le libellé de l’école dans le bandeau.
+4. Renseignez la constante `INSTANCE` en tête de votre fichier de données : nom de l’association, école, ville, domaine du site public, domaine des adresses de fonction, hashtags, indicatif téléphonique et clé de stockage du navigateur (`cle`, à changer pour chaque instance). Tout ce qui est propre à votre association passe par ce bloc : le code n’a pas à être modifié, et chaque nouvelle version de Concordia se réinjecte avec la même commande.
 
 Une instance porte le nom de son association ; le pied de page peut mentionner « propulsé par Concordia » (voir `TRADEMARK.md`).
 

@@ -4,6 +4,19 @@
    Association fictive : APEL de l’école des Flamboyants, Saint-Exemple (La Réunion).
    Toute ressemblance avec des personnes ou des montants réels serait fortuite.
    Pour une instance réelle, remplacez ce bloc par vos données (voir README, « Créer une instance »). */
+const INSTANCE = {
+  asso: 'APEL de l’école des Flamboyants',        /* nom complet de l’association (bandeau, modèles de documents) */
+  ecole: 'École des Flamboyants',
+  ville: 'Saint-Exemple',
+  region: 'La Réunion',
+  site: 'apel.ecole-des-flamboyants.example',     /* site public (aperçu, agenda .ics) */
+  domaineMail: 'ecole-des-flamboyants.example',   /* domaine des adresses de fonction (presidence.apel@…) */
+  hashtags: '#ApelFlamboyants #SaintExemple #LaReunion #ParentsDeleves',
+  bureauElu: '2026-10-24',                        /* date d’élection du bureau (modèles de demande de subvention) */
+  indicatif: '+262',                              /* indicatif des liens WhatsApp et Signal */
+  cle: 'concordia-demo-v5'                        /* clé de stockage du navigateur : changez-la pour chaque instance */
+};
+
 const TODAY = new Date('2026-11-03T08:00:00');
 
 const MEMBERS = [
@@ -253,6 +266,7 @@ const FAMILLES = {
 };
 
 const ECOLE = {
+  note:'Mme Lauret (GS) a été désignée par la direction pour faire le lien entre l’APEL et ses collègues ; l’enseignante de CE2 partage déjà les photos de sa classe sur le téléphone de l’association. Étapes pour les accueillir : accord du chef d’établissement, vérification des statuts (membre associé), invitation par e-mail, premier pas dans l’espace enseignants.',
   demandes:[
     {id:'dm1', classe:'Toutes', de:'Direction', t:'Kermesse de Noël : participation de l’APEL', d:'2026-11-04', etat:'etudiee', besoin:'Réunion d’organisation mercredi 4/11 à 17 h', lien:'kermesse-noel'},
     {id:'dm2', classe:'CE2 A', de:'Enseignante de CE2', t:'Financer la sortie au jardin botanique (bus)', d:'2026-10-29', etat:'recue', besoin:'180 € — à passer au CA du 14/11', lien:null},
@@ -325,4 +339,50 @@ const MESSAGES = [
   {id:'g4', by:'m1', when:'2026-11-02T08:47', source:'whatsapp', txt:'Pour les posts, merci d’envoyer en amont sur le groupe.'},
   {id:'g5', by:'m4', when:'2026-11-02T12:56', source:'whatsapp', txt:'Le PV du CA du 24/10 est relu, je le dépose dans Documents ce soir.'}
 ];
+
+const INFOS = { /* aperçu « Dernières infos » (page du QR de l’affiche) */
+  maj:'2026-11-02',
+  items:[
+    ['Nouveau conseil d’administration', 'élu le 17 octobre : treize parents, un bureau de quatre.'],
+    ['Planning de novembre', ': réunion kermesse le 4, journée de la bienveillance le 5, CA les 6 et 14.'],
+    ['Kermesse de Noël', 'le 11 décembre : appel aux bénévoles à venir.']
+  ]
+};
+
+const GUICHETS = [
+  {id:'g1', nom:'Mairie de Saint-Exemple', quoi:'Subvention annuelle de fonctionnement et aide aux projets des associations de la commune.', quand:'Campagne annuelle, généralement en début d’année civile (date exacte à vérifier auprès du service vie associative).', pieces:['Formulaire de la commune','Statuts et récépissé RNA','Composition du bureau et PV de l’AG','Comptes de l’exercice écoulé','Budget prévisionnel','RIB au nom de l’association','Projet détaillé avec budget'], montant:'Quelques centaines à quelques milliers d’euros selon le projet'},
+  {id:'g2', nom:'Département de La Réunion', quoi:'Aides aux associations pour des actions éducatives, sportives ou culturelles.', quand:'Appels à projets et guichet permanent selon les dispositifs ; vérifier le calendrier en ligne.', pieces:['Dossier type du Département','Statuts, RNA, bureau','Comptes et budget','Fiche projet et plan de financement'], montant:'Variable selon le dispositif'},
+  {id:'g3', nom:'Région Réunion', quoi:'Appels à projets (jeunesse, citoyenneté, culture) ouverts aux associations.', quand:'Selon les appels ; surveiller les publications.', pieces:['Dossier de l’appel à projets','Statuts, RNA, bureau','Comptes et budget','Plan de financement'], montant:'Variable'},
+  {id:'g4', nom:'FDVA — Fonds pour le développement de la vie associative', quoi:'Fonctionnement et projets innovants des petites associations (volet 2) ; formation des bénévoles (volet 1).', quand:'Appel à projets annuel, dépôt sur Le Compte Asso, en général au premier trimestre.', pieces:['Compte sur Le Compte Asso','Statuts, RNA, SIRET','Comptes approuvés et budget','Fiche projet'], montant:'Souvent 1 000 à 5 000 € pour une petite association'},
+  {id:'g5', nom:'CAF — REAAP (soutien à la parentalité)', quoi:'Actions d’écoute, d’appui et d’accompagnement des parents : cafés des parents, conférences, ateliers.', quand:'Appel à projets annuel de la CAF de La Réunion ; vérifier les dates.', pieces:['Dossier REAAP','Statuts, RNA','Budget de l’action','Partenariat avec l’école décrit'], montant:'Selon l’action'},
+  {id:'g6', nom:'Apel nationale et académique', quoi:'Formations gratuites des bénévoles, assurance des événements via le partenaire de l’Apel, appui et outils.', quand:'Toute l’année.', pieces:['Adhésion de l’Apel à jour'], montant:'Services plutôt que subventions'}
+];
+
+const RESSOURCES = {
+  liens:[
+    {n:'Apel nationale — apel.fr', url:'https://www.apel.fr', d:'Actualités, Apel infos, outils du responsable, partenaires nationaux.'},
+    {n:'Formations des responsables Apel', url:'https://www.apel.fr', d:'Catalogue de formations gratuites pour les bénévoles (présidence, trésorerie, communication).'},
+    {n:'Apel académique', url:null, d:'Votre échelon académique : appui juridique, formations, cotisation annuelle. Coordonnées à compléter.'},
+    {n:'Le Compte Asso (démarches de subvention de l’État)', url:'https://lecompteasso.associations.gouv.fr', d:'Dépôt des demandes FDVA et déclaration des changements de bureau.'},
+    {n:'Site de l’école', url:'https://ecole-des-flamboyants.example', d:'Actualités, vie pratique, campagne des préaux.'}
+  ],
+  fiches:[
+    {n:'Fiscalité d’une vente de l’APEL', c:'Six manifestations de soutien par an sont exonérées de TVA et d’impôts commerciaux (CGI, art. 261-7-1°-c). Au-delà, la franchise des activités lucratives accessoires est de 81 051 € en 2026. Tant que l’APEL n’est pas assujettie à la TVA, la facturation électronique ne la concerne pas. Il reste obligatoire de garder une pièce pour chaque recette et chaque dépense.'},
+    {n:'Photos et droit à l’image', c:'Un visage d’enfant ne se publie qu’avec une autorisation écrite couvrant le support (Facebook, site, affiche), vérifiée par l’enseignant(e) ; sinon, visage flouté ou photo sans visage. L’autorisation signée pour l’école ne vaut pas automatiquement pour l’APEL.'},
+    {n:'Données personnelles (RGPD)', c:'Collecter le minimum (nom, classe, e-mail), dire pourquoi, limiter l’accès au bureau, supprimer après l’action. Pas de liste de familles sur un service grand public non maîtrisé.'},
+    {n:'Assurance des événements', c:'Les événements organisés par l’Apel sont couverts via le partenaire assureur de l’Apel nationale ; vérifier l’attestation en vigueur avant chaque manifestation.'},
+    {n:'Paiement en ligne', c:'Compte toujours au nom de l’association, ouvert par la présidente et la trésorière. Comparatif des prestataires et garde-fous dans la présentation au CA.'}
+  ],
+  modeles:[
+    {n:'Convocation au conseil d’administration', t:'Texte'},
+    {n:'Procès-verbal de réunion', t:'Texte'},
+    {n:'Demande de partenariat ou de dons en nature', t:'Lettre'},
+    {n:'Demande de subvention — trame commune', t:'Dossier'},
+    {n:'Autorisation parentale (photo, événement)', t:'Formulaire'},
+    {n:'Annonce aux familles', t:'Texte'}
+  ]
+};
+
+const CLASSES = ['PS A','MS A','MS B','GS A','GS B','CE1 B','CE2 A','CM1 A'];
+
 /* === FIN DES DONNÉES DE DÉMONSTRATION === */
