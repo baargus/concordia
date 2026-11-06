@@ -65,4 +65,6 @@ Copyright © 2026 Baptiste Sobocinski — DevPro Services & Projects. Contact : 
 
 ## Contribuer
 
-Issues et demandes de fusion bienvenues sur le dépôt d’origine. Merci de ne jamais y verser de données réelles (noms de membres, numéros, finances) : utilisez le jeu fictif.
+Issues et pull requests bienvenues sur <https://github.com/baargus/concordia>. Ce dépôt GitHub est un miroir : le développement se fait sur un dépôt d’origine privé, qui y pousse chaque version. Les contributions acceptées sont intégrées depuis l’origine, puis apparaissent ici au miroir suivant.
+
+Merci de ne jamais y verser de données réelles (noms de membres, numéros, finances) : utilisez le jeu fictif.
